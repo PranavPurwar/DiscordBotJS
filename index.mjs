@@ -1,5 +1,4 @@
-import {Client, MessageEmbed} from ('discord.js')
-import config from ('./config.json')
+import { Client, MessageEmbed } from ('discord.js')
 import fs from 'fs'
 const walletFile = './wallet.json'
 import wallet from (walletFile)
@@ -86,4 +85,4 @@ client.on("messageCreate", function(message) {
   }
 })
 
-client.login(config.BOT_TOKEN)
+client.login(process.env.BOT_TOKEN)
