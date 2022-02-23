@@ -1,7 +1,7 @@
 import fs from 'fs'
 
 module.exports = {
-  updateWallet(wallet)
+  async updateWallet(wallet)
   {
     fs.writeFile('./wallet.json', JSON.stringify(wallet), err =>
     {
@@ -9,7 +9,7 @@ module.exports = {
     })
   },
 
-  updateBank(bank)
+  async updateBank(bank)
   {
     fs.writeFile('./bank.json', JSON.stringify(bank), err =>
     {

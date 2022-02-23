@@ -9,7 +9,7 @@ const bank = require('../bank.json')
 module.exports = {
   name: 'balance',
   description: "Check your balance",
-  execute(message, args)
+  async execute(message, args)
   {
     let user
     if (message instanceof Interaction)

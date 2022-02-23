@@ -10,7 +10,7 @@ module.exports = {
   name: "create-account",
   description: 'Register your presence in our database',
 
-  execute(message, args)
+  async execute(message, args)
   {
 
     let author
