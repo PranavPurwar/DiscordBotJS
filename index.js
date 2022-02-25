@@ -1,4 +1,4 @@
-const http = require('http')
+const express = require('express')
 const fs = require('fs')
 const
 {
@@ -8,24 +8,14 @@ const
 
 const prefix = '.'
 
-const server = http.createServer(function (request, response)
-{
-  if (request.url == '/')
-  {
-    fs.readFile('test.html', function (err, data)
-    {
-      response.writeHead(200,
-      {
-        'Content-Type': 'text/html'
-      })
-      response.write(data)
-      return response.end()
-    })
-  }
-  else
-  {
-    response.end('Invalid data')
-  }
+const app = express()
+
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
+app.listen(8080, () => {
+  console.log('Server is online')
 })
 
 
@@ -95,4 +85,3 @@ client.on("messageCreate", message =>
   }
 })
 client.login(process.env.BOT_TOKEN);
-server.listen(8080)
